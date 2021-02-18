@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="act"
+            type="com.soulmates.valley.ui.post.write.PostActivity" />
+        <variable
+            name="vm"
+            type="com.soulmates.valley.ui.post.PostViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".ui.post.write.PostActivity">
+
+        <include
+            android:id="@+id/act_post_header"
+            layout="@layout/layout_header_cancel" />
+
+        <include
+            android:id="@+id/act_post_layout_button"
+            layout="@layout/layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="@+id/act_post_header"
+            app:layout_constraintEnd_toEndOf="@+id/act_post_header"
+            app:layout_constraintTop_toTopOf="@+id/act_post_header" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/act_post_nsv_full"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/act_post_header">
+
+            <RelativeLayout
+                android:id="@+id/act_post_ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/act_post_layout_code"
+                    layout="@layout/layout_post_attach_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/act_post_layout_url"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/act_post_layout_url"
+                    layout="@layout/layout_post_attach_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/act_post_layout_img"
+                    android:layout_marginHorizontal="@dimen/default_margin"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/act_post_layout_img"
+                    layout="@layout/layout_post_attach_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/act_post_ll_attach_type"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:id="@+id/act_post_ll_attach_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:background="@color/black"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:text="첨부"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/act_post_rv_attach_type"
+                        replaceAll="@{act.attachTypeList}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/act_post_ll_attach_type" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/act_post_ll_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/act_post_layout_code"
+                    android:layout_marginHorizontal="@dimen/default_margin"
+                    android:layout_marginTop="23dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:text="내용"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/act_post_et_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/solid_10_ffffff"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:gravity="top"
+                            android:hint="@string/post_hint"
+                            android:inputType="textMultiLine|textNoSuggestions"
+                            android:maxLength="1000"
+                            android:minLines="15"
+                            android:padding="15dp"
+                            android:textColor="#292a2c"
+                            android:textSize="15sp" />
+                    </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/act_post_ll_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/act_post_ll_content"
+                    android:layout_marginHorizontal="@dimen/default_margin"
+                    android:layout_marginTop="23dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/act_post_ll_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                        android:text="태그"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/solid_10_ffffff"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="23dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/act_post_rv_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:overScrollMode="never"
+                            app:fastScrollEnabled="false"
+                            replaceAll="@{act.hashTagList}"/>
+
+                        <EditText
+                            android:id="@+id/act_post_et_tag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                            android:hint="#태그를 달아주세요 (최대 5개)"
+                            android:background="@null"
+                            android:padding="15dp"
+                            android:textColor="#292a2c"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

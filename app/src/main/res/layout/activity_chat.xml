@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".ui.chat.ChatActivity">
+
+        <RelativeLayout
+            android:id="@+id/act_chat_rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/act_chat_iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="1dp"
+                android:src="@drawable/btn_back" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/act_chat_civ_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/act_chat_iv_back"
+                android:src="@drawable/sample1" />
+
+            <TextView
+                android:id="@+id/act_chat_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_toRightOf="@id/act_chat_civ_profile"
+                android:fontFamily="@font/spoqa_han_sans_neo_bold"
+                android:lineSpacingExtra="8sp"
+                android:text="장혜진"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/act_chat_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/act_chat_ll_input"
+            app:layout_constraintTop_toBottomOf="@id/act_chat_rl_header" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/act_chat_ll_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/act_chat_iv_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="6dp"
+                android:src="@drawable/btn_chat_gallery"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="9dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/solid_10_ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/act_chat_iv_album"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/act_chat_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="9dp"
+                android:background="@null"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:overScrollMode="always"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="9dp"
+                android:scrollbarStyle="insideInset"
+                android:textColor="@color/black"
+                android:textColorHint="#c3c3c3"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/act_chat_tv_send"
+                app:layout_constraintStart_toEndOf="@id/act_chat_iv_album"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/act_chat_tv_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/solid_5_gray"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
+                android:text="등록"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/act_chat_et"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

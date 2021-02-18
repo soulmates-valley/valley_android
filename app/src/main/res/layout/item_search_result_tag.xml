@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tag"
+            type="com.soulmates.valley.data.model.search.SearchTag" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/default_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:text="#"
+            android:textColor="@color/main_green"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/default_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                android:text="@{tag.key}"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:text="개발일상" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@{String.valueOf(tag.postCount)}"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    tools:text="10,100" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/spoqa_han_sans_neo_regular"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:text="개" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.soulmates.valley">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".ValleyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/img_icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.noti.NotiHistoryActivity"/>
+        <activity android:name=".ui.feed.recommend.RecommendFeedActivity" />
+        <activity android:name=".ui.search.result.post.PostListActivity" />
+        <activity android:name=".ui.ButtonActivity" /> <!-- 메인 탭/스플래시 -->
+        <activity android:name=".ui.initial.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.tab.MainActivity"
+            android:windowSoftInputMode="adjustNothing" /> <!-- 회원가입/로그인 -->
+        <activity android:name=".ui.initial.InitialActivity" />
+        <activity android:name=".ui.signUp.SignUpEmailActivity" />
+        <activity android:name=".ui.signUp.SignUpProfileActivity" />
+        <activity android:name=".ui.signUp.SignUpInterestActivity" />
+        <activity
+            android:name=".ui.signIn.SignInActivity"
+            android:windowSoftInputMode="adjustResize" /> <!-- 게시글 작성/조회 -->
+        <activity android:name=".ui.post.write.PostActivity" />
+        <activity
+            android:name=".ui.post.read.PostDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.post.write.code.CodeViewActivity" />
+        <activity android:name=".ui.post.write.url.WebViewActivity" />
+        <activity
+            android:name=".ui.post.read.PostImageActivity"
+            android:theme="@style/Transparent" /> <!-- 채팅 -->
+        <activity android:name=".ui.chat.ChatActivity" />
+        <activity
+            android:name=".ui.initial.LoadingActivity"
+            android:theme="@style/Transparent" /> <!-- 프로필 -->
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.profile.SettingActivity" /> <!-- service -->
+        <service
+            android:name=".util.etc.FirebaseMessagingService"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="interestIdx"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textSize="12sp"
+            android:textColor="#d3d3d3"
+            android:lineSpacingExtra="6sp"
+            android:text="#" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textSize="12sp"
+            setInterestByIdx="@{interestIdx}"
+            android:textColor="#d3d3d3"
+            android:lineSpacingExtra="6sp"
+            tools:text="java" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chatRoom"
+            type="com.soulmates.valley.data.model.chat.ChatRoom" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_chat_room_civ"
+            glideCenterCrop="@{chatRoom.profileImg}"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginVertical="11dp"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_chat_room_tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:lineSpacingExtra="7sp"
+            android:maxLines="1"
+            android:text="@{chatRoom.nickname}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/item_chat_room_tv_content"
+            app:layout_constraintEnd_toStartOf="@id/item_chat_room_tv_time"
+            app:layout_constraintStart_toEndOf="@id/item_chat_room_civ"
+            app:layout_constraintTop_toTopOf="@id/item_chat_room_civ"
+            tools:text="app:layout_constraintEnd_toEndOf=app:layout_constraintEnd_toEndOf=" />
+
+        <TextView
+            android:id="@+id/item_chat_room_tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:lineSpacingExtra="6sp"
+            android:maxLines="1"
+            android:text="@{chatRoom.content}"
+            android:textColor="#c3c3c3"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/item_chat_room_civ"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_chat_room_tv_name"
+            app:layout_constraintTop_toBottomOf="@id/item_chat_room_tv_name"
+            tools:text="app:layout_constraintEnd_toEndOf=app:layout_constraintEnd_toEndOf=" />
+
+        <TextView
+            android:id="@+id/item_chat_room_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="6sp"
+            tools:text="2시간 전"
+            setCreateTime="@{chatRoom.lastMessageTime}"
+            android:textColor="#adadad"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

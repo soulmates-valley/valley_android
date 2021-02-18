@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android" >-->
+<!--    <solid android:color="#464646" />-->
+<!--    <size android:height="1dp"/>-->
+<!--    <padding android:left="@dimen/default_margin" android:right="@dimen/default_margin"/>-->
+<!--</shape>-->
+
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="@dimen/default_margin"
+    android:insetRight="@dimen/default_margin">
+
+    <shape>
+        <size android:height="1dp" />
+        <solid android:color="#464646" />
+    </shape>
+
+</inset>

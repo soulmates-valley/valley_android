@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="uri"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/item_post_attach_iv_thumbnail"
+            glideCenterCrop="@{uri}"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginVertical="@dimen/default_margin"
+            android:layout_marginStart="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_url_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/item_post_attach_iv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_photo_delete"
+            app:layout_constraintStart_toStartOf="@+id/item_post_attach_iv_thumbnail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

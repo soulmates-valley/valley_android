@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Valley</string>
+    <string name="base_url">http://192.168.0.4:3000</string>
+    <string name="default_notification_channel_name">Valley</string>
+    <string name="default_notification_channel_id">valley-6d216</string>
+
+    <string name="post_hint">어떤 생각을 공유하고 싶으신가요?\n\n\n\n\n\n\n\n\n\n\n\n\n\n</string>
+    <string name="no_search_result">검색 결과가 존재하지 않습니다.</string>
+    <string name="no_profile_post">작성한 글이 없습니다.</string>
+    <string name="no_noti_history">알림 내역이 존재하지 않습니다.</string>
+    <string name="no_home_feed">보여드릴 피드가 없습니다.\n다양한 친구들을 팔로우 해보세요!</string>
+    <string name="no_recomment_feed">보여드릴 추천 피드가 없습니다.</string>
+
+    <string name="server_error">서버 점검중입니다.</string>
+
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="friend"
+            type="com.soulmates.valley.data.model.friend.Follow" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_frag_friend_list_civ_profile"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/img_non_profile_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_frag_friend_list_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:letterSpacing="-0.01"
+            android:lineSpacingExtra="7sp"
+            android:text="@{friend.nickname}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/item_frag_friend_list_civ_profile"
+            app:layout_constraintTop_toTopOf="@id/item_frag_friend_list_civ_profile" />
+
+        <TextView
+            android:id="@+id/item_frag_friend_list_tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="6sp"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:text="@{friend.description}"
+            android:textColor="#d3d3d3"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/item_frag_friend_list_civ_profile"
+            app:layout_constraintStart_toStartOf="@id/item_frag_friend_list_tv_name"
+            app:layout_constraintTop_toBottomOf="@id/item_frag_friend_list_tv_name" />
+
+        <TextView
+            android:id="@+id/item_frag_friend_list_tv_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:background="@drawable/solid_5_main_yellow"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="12sp"
+            android:paddingHorizontal="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="7dp"
+            android:text="팔로우"
+            setFollowButton="@{friend.isFollowed}"
+            android:textColor="#292a2c"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

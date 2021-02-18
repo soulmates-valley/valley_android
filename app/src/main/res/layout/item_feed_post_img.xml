@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="url"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="240dp">
+
+        <ImageView
+            android:id="@+id/item_feed_post_img_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            glideCenterCrop="@{url}"
+            android:src="@color/main_yellow"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="@dimen/default_margin"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/dial_frag_bottom_tv_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_10_top_ffffff"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:padding="10dp"
+            android:text="편집"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_yellow" />
+
+        <TextView
+            android:id="@+id/dial_frag_bottom_tv_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/solid_10_bottom_ffffff"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:padding="10dp"
+            android:text="삭제"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/dial_frag_bottom_tv_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/solid_10_black"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:padding="10dp"
+            android:text="취소"
+            android:textAlignment="center"
+            android:textColor="@color/main_green"
+            android:textSize="15sp" />
+    </LinearLayout>
+</layout>

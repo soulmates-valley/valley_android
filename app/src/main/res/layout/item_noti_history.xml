@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="noti"
+            type="com.soulmates.valley.data.model.noti.NotiHistory" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:paddingHorizontal="@dimen/default_margin">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_noti_history_civ"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            glideCenterCrop="@{noti.profileImg}"
+            android:layout_marginVertical="8dp"
+            android:src="@drawable/img_non_profile_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:lineSpacingExtra="4sp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            setNotiText="@{noti.event}"
+            setNotiNickname="@{noti.nickname}"
+            app:layout_constraintBottom_toBottomOf="@id/item_noti_history_civ"
+            app:layout_constraintEnd_toStartOf="@+id/item_noti_hostory_tv_time"
+            app:layout_constraintStart_toEndOf="@id/item_noti_history_civ"
+            app:layout_constraintTop_toTopOf="@id/item_noti_history_civ"
+            tools:text="장혜진님이 회원님의 게시글에 댓글을 달았습니다." />
+
+        <TextView
+            android:id="@+id/item_noti_hostory_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:gravity="end"
+            android:letterSpacing="-0.03"
+            android:lineSpacingExtra="6sp"
+            android:textColor="#adadad"
+            android:textSize="14sp"
+            setCreateTime="@{noti.notiTime}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3분 전" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

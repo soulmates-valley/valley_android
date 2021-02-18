@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.post.write.code.CodeViewActivity">
+
+        <include
+            android:id="@+id/act_code_view_header"
+            layout="@layout/layout_header_back" />
+
+        <include
+            android:id="@+id/act_code_view_header_button"
+            layout="@layout/layout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/act_code_view_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/act_code_view_header" />
+
+        <com.brackeys.ui.editorkit.widget.TextProcessor
+            android:id="@+id/act_code_view_editor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/act_code_view_header" />
+
+<!--        <io.github.kbiakov.codeview.CodeView-->
+<!--            android:id="@+id/code_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:background="#272822"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/act_code_view_header" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

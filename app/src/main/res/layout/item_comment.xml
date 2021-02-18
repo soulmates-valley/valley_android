@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="comment"
+            type="com.soulmates.valley.data.model.comment.Comment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/default_margin"
+        android:background="@android:color/transparent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_comment_civ_profile"
+            glideCenterCrop="@{comment.userImage}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/sample1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_comment_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:lineSpacingExtra="13sp"
+            android:text="@{comment.nickname}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/item_comment_civ_profile"
+            app:layout_constraintTop_toTopOf="@id/item_comment_civ_profile"
+            tools:text="김예진"
+            tools:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/item_comment_tv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:lineSpacingExtra="2sp"
+            android:text="@{comment.content}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_comment_tv_name"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_tv_name"
+            tools:text="also 와 let 을 중첩 해야만 할때는 암시적 수신 객체 를 가르키는 매개 변수 인 it 을 사용하지 마십시오. 대신 명시적인 이름을 제공하여 코드 상의 이름이 혼동되지 않도록 해야 합니다."
+            tools:textColor="@color/black"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:lineSpacingExtra="14sp"
+            tools:text="12월 25일"
+            setCreateTime="@{comment.createDt}"
+            android:textColor="#d3d3d3"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/item_comment_tv_name" />
+
+        <TextView
+            android:id="@+id/item_comment_tv_recomment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:lineSpacingExtra="14sp"
+            android:text="답글 달기"
+            android:textColor="#adadad"
+            android:textSize="12sp"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintStart_toStartOf="@id/item_comment_tv_content"
+            app:layout_constraintTop_toBottomOf="@id/item_comment_tv_content"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

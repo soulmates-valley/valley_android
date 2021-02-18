@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ted_image_picker_primary">@color/sub_blue</color>
+    <color name="ted_image_picker_primary_pressed">@color/sub_blue</color>
+
+    <color name="black">#1a1a1a</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#adadad</color>
+    <color name="dark_gray">#414141</color>
+    <color name="sub_red">#f57653</color>
+    <color name="main_green">#1dc37d</color>
+    <color name="main_yellow">#ffd548</color>
+    <color name="sub_blue">#569ed9</color>
+</resources>

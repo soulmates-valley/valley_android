@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@color/black">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/layout_post_attach_img_rv"
+            android:layout_width="match_parent"
+            android:layout_height="113dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:background="@drawable/solid_10_ffffff"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </RelativeLayout>
+</layout>

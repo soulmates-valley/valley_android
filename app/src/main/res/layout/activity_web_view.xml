@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.post.write.url.WebViewActivity">
+
+        <include
+            android:id="@+id/act_web_view_header"
+            layout="@layout/layout_header_back"/>
+
+        <ProgressBar
+            android:id="@+id/act_web_view_pb"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/main_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="3"
+            android:layout_below="@+id/act_web_view_header"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/act_web_view_wv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/act_web_view_pb">
+        </WebView>
+
+    </RelativeLayout>
+</layout>

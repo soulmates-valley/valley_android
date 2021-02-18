@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tap_main_height"
+        android:background="#1a1a1a"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tap_main_rl_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/tap_main_iv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selector_tab_home" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tap_main_rl_recco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/tap_main_iv_recco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selector_tab_recco" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tap_main_rl_friend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/tap_main_iv_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selector_tab_friend" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tap_main_rl_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/tap_main_iv_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selector_tab_chat" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tap_main_rl_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/tap_main_rl_profile_img_container"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/selector_tab_profile" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/tap_main_iv_profile"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="6dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

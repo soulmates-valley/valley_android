@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "96017339845",
+    "project_id": "valley-d211b",
+    "storage_bucket": "valley-d211b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96017339845:android:6919e1b3be8f99e387e7ac",
+        "android_client_info": {
+          "package_name": "com.soulmates.valley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96017339845-sgdrkbb8226dv8jln9sc3irele40a4pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtCOzuzce2X6ChGG_gBy-6kbzJK5QnUtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96017339845-sgdrkbb8226dv8jln9sc3irele40a4pd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

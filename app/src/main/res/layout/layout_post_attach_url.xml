@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="@dimen/default_margin"
+        android:background="@drawable/solid_10_ffffff">
+
+        <ImageView
+            android:id="@+id/layout_post_attach_url_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/img_url_default"
+            android:scaleType="centerCrop"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/layout_post_attach_url_tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_bold"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:text=""
+            app:layout_constraintTop_toTopOf="@id/layout_post_attach_url_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/layout_post_attach_url_iv"/>
+
+        <TextView
+            android:id="@+id/layout_post_attach_url_tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/spoqa_han_sans_neo_regular"
+            android:textSize="13sp"
+            android:textColor="#292a2c"
+            android:layout_marginTop="11dp"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@id/layout_post_attach_url_iv"
+            app:layout_constraintStart_toStartOf="@id/layout_post_attach_url_tv_title"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
