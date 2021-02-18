@@ -30,7 +30,7 @@ import retrofit2.http.*
 
 interface ValleyService {
     /*
-    회원가입 & 로그임
+    회원가입 & 로그인
      */
     @POST("/users/verifyEmail")
     fun emailVerify(

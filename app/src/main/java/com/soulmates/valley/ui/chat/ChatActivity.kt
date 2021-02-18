@@ -39,8 +39,6 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>() {
     private val formatter = DateTimeFormatter.ofPattern("a h:mm")
     lateinit var dateTime: LocalDateTime
 
-    private val tag = "socket@@@"
-
     private var otherUserId: Int = 0
     private var otherNickname = ""
     private var otherProfileImg = ""
@@ -76,8 +74,6 @@ class ChatActivity : BaseActivity<ActivityChatBinding, ChatViewModel>() {
             else "r" + otherUserId + "w" + myUserId
         }
         viewModel.getChatLog(roomName)
-
-        Timber.tag(tag).d(roomName)
 
         requestManager = Glide.with(this)
         setText()

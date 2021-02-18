@@ -59,10 +59,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, FeedViewModel>() {
         setRv()
         observe()
         setRefresh()
-        Timber.tag("ONCREATE@@@ before").d(viewModel.showHomeFeed(savedInstanceState?.getString(HOME_FEED_STATE) ?: "").toString())
         viewModel.showHomeFeed(savedInstanceState?.getString(HOME_FEED_STATE) ?: "")
-
-        Timber.tag("ONCREATE@@@ after").d(viewModel.showHomeFeed(savedInstanceState?.getString(HOME_FEED_STATE) ?: "").toString())
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
